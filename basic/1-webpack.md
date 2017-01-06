@@ -4,11 +4,11 @@ title: webpack环境搭建和配置
 
 node.js的模块分为3类：
 
-  - 核心模块: 是node.js自带的模块，后台需要用到它，目前不用管。
+- 核心模块: 是node.js自带的模块，后台需要用到它，目前不用管。
 
-  - 第三方模块: 是通过 `npm install <Module Name> --save-div` 安装的包，包在 `node_modules` 文件夹中。
+- 第三方模块: 是通过 `npm install <Module Name> --save-div` 安装的包，包在 `node_modules` 文件夹中。
 
-  - 自定义模块: 是自己写的JS代码模块文件。
+- 自定义模块: 是自己写的JS代码模块文件。
 
 ### 首先在初始化项目文件
 ```
