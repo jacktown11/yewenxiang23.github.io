@@ -1,5 +1,5 @@
 ---
-title: nvm安装node.js
+title: nvm安装node.js的一些基本操作
 ---
 
 安装node方式很多，最好使用nvm (*node.js的版本控制工具，可以同时安装多个node.js*).
