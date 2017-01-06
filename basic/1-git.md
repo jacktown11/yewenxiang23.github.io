@@ -17,6 +17,7 @@ git --version
 获取git的版本号
 ```
 ### git本地化的步骤
+
 - 第一步：在项目文件夹中运行 `git init` 来初始化一个仓库,会建立一个.git 的隐藏文件夹。
 - 第二步：`git add -A` 添加修改后的版本到 `.git` 文件夹中， `-A`是添加所有文件的意思
 - 第三步: `git commit -m"留言内容"` 做成一个git本地的一个版本，`-m` 是 `message` 留言的意思，这个是必须的。
@@ -29,6 +30,7 @@ git config --global user.name "yewenxiang"
 git config --global user.email "yewenxiang23@gmail.com"
 ```
 ### 使用git上传本地仓库到github上
+
 - 第一步：
 
 
@@ -43,16 +45,20 @@ git log -p
 ### git 回滚的操作
 
 - 修改后没做版本 回到上个 `git commit -m"..."` 的版本可以使用
-    ```
+
+    ```bash
     git reset --hard HEAD
     ```
+
 - 修改后做了版本 回到上个版本可以使用
-    ```
+
+    ```bash
     git reset --hard HEAD~
     ```
+
 - 在用户的主目录文件夹下有一个 `.gitconfig` 的隐藏文件，可以修改里面的属性来配置git.
 
-    ```
+    ```json
     [alias]
     throw = reset --hard HEAD
     throwh = reset --hard HEAD~
