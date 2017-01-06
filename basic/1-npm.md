@@ -23,23 +23,27 @@ npm install <Module Name> --save
 这时，就会在我们的项目文件夹下生成一个 `node_modules` 的文件夹,里面会有安装的包。
 
 - 本地安装
-  ```bash
+
+```bash
     npm install <Module Name> --save
     版本名和版本号记录在dependencies字段中
     npm install express --save-dev
     版本名和版本号记录在devDependencies字段中
-  ```
+```
+
     dependencies字段中的包信息是项目上线时依赖的包，devDependencies字段中的包信息是开发项目时需要的包工具。
 
 - 全局安装
-  ```bash
-  npm install <Module Name> -g
-  ```
 
-  ```bash
+```bash
+  npm install <Module Name> -g
+```
+
+```bash
   npm ls -g
   查看全局安装的模块
-  ```
+```
+
   不建议使用全局安装，因为多人协作时，可能会导致开发环境不同（包的版本不同）导致一些问题。
 
 ### npm 卸载模块
