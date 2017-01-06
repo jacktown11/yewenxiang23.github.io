@@ -17,6 +17,7 @@ sudo npm install git
 git --version
 获取git的版本号
 ```
+
 ### git本地化的步骤
 
 - 第一步：在项目文件夹中运行 `git init` 来初始化一个仓库,会建立一个.git 的隐藏文件夹。
