@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #F5F5F5;
+  padding-top: 50px;
+}
+.container{
+  width: 960px;
+  margin: 0 auto;
+  background-color: white;
+}
+p.part {
+    font-family: "Crete Round", Georgia, Times New Roman, serif;
+    font-size: 20px;
+    color: #14877E;
+    margin: 20px 0;
+    text-align: center;
+}
