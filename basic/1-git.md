@@ -3,7 +3,8 @@ title: git的一些命令操作
 ---
 
 ### 安装git
-```
+
+```bash
 sudo apt-get update
 sudo apt-get install git
 sudo npm install git
@@ -12,7 +13,7 @@ sudo npm install git
 > `apt-get` 是 `ubuntu` 系统（deepin其实就是ubuntu的一个变种）的软件安装命令
 >
 
-```
+```bash
 git --version
 获取git的版本号
 ```
@@ -25,7 +26,7 @@ git --version
 >这一步对于新装的git用户来说还要告诉git 用户名和邮箱。
 >
 
-```
+```bash
 git config --global user.name "yewenxiang"
 git config --global user.email "yewenxiang23@gmail.com"
 ```
@@ -35,10 +36,11 @@ git config --global user.email "yewenxiang23@gmail.com"
 
 
 ### git 其他的一些命令
-```
+
+```bash
 git log -p
 ```
-- `log` 是日志的意思, `-p`是patch (补丁,就是修改内容)的缩写
+`log` 是日志的意思, `-p`是patch (补丁,就是修改内容)的缩写
 
 使用 `brew install tig` 安装tig包后，查看版本日志方便了很多，选中其中一个版本按 `D` 可以查看详细信息 按 `Q` 可以退出
 
@@ -46,23 +48,24 @@ git log -p
 
 - 修改后没做版本 回到上个 `git commit -m"..."` 的版本可以使用
 
-    ```bash
-    git reset --hard HEAD
-    ```
+```bash
+git reset --hard HEAD
+```
 
 - 修改后做了版本 回到上个版本可以使用
 
-    ```bash
-    git reset --hard HEAD~
-    ```
+```bash
+git reset --hard HEAD~
+```
 
 - 在用户的主目录文件夹下有一个 `.gitconfig` 的隐藏文件，可以修改里面的属性来配置git.
 
-    ```json
-    [alias]
-    throw = reset --hard HEAD
-    throwh = reset --hard HEAD~
-    ```
+```json
+[alias]
+throw = reset --hard HEAD
+throwh = reset --hard HEAD~
+```
+
 >添加上述代码后 每次回滚操作只需输入 git throw 或者 git throwh 就可以了
 >
 
