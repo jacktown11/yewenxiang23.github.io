@@ -80,3 +80,27 @@ throwh = reset --hard HEAD~
 
 >如果你因为reset等操作丢失一个提交的时候，你总是可以把它找回，除非你的操作已经被git当做垃圾处理了，一般是在30天后执行。
 >
+
+### git clone 命令
+
+要想把 github 上的一个项目代码下载到本地有两种方式，一种就是普通下载（ download ）。但是，开发者 基本上会选择另外一种方式，就是 clone 。
+```
+git clone git@github.com:happypeter/digicity.git
+```
+clone 的特点就是不仅仅可以得到最新代码，而且可以得到整个改版历史。而普通下载只能得到最新版本。
+
+### git 各个命令的作用
+
+- `git push` 把本地仓库中有，而远端对应仓库中没有的版本推送到远端
+
+- `git pull` 把远端仓库中有，而本地对应仓库中没有的版本拉到本地
+
+- `git clone` 把远端仓库，克隆到本地
+
+---
+
+### 学习git资源
+
+- [Atom 爱上 JS](http://haoqicat.com/atom-love-js)
+- [驾驭命令行怪兽](http://haoqicat.com/ride-cli-monster)
+- [Git北京](http://haoqicat.com/gitbeijing)

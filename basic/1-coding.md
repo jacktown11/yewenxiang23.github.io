@@ -5,7 +5,7 @@ title: coding 操作
 ### 一些操作
 ```bash
 git remote add origin git@git.coding.net:yewenxiang/yewenxiang.git
-修改 `.git/confing` 文件中的属性，添加仓库的地址
+修改 `.git/config` 文件中的属性，添加仓库的地址
 ```
 
 
