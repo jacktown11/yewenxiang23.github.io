@@ -31,9 +31,6 @@ git --version
 git config --global user.name "yewenxiang"
 git config --global user.email "yewenxiang23@gmail.com"
 ```
-### 使用git上传本地仓库到github上
-
-- 第一步：
 
 
 ### git 其他的一些命令
