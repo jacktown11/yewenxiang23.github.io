@@ -94,7 +94,46 @@ clone 的特点就是不仅仅可以得到最新代码，而且可以得到整�
 
 - `git clone` 把远端仓库，克隆到本地
 
+### git 分支的操作
+
+每次我们对新仓库推送代码时都要执行类似于以下两行代码
+
+- `git remote add origin git@github.com:happypeter/digicity.git` 设置仓库的地址，修改 `.git/config` 文件中的属性
+
+- `git push -u origin master` 推送仓库当前版本到主分支之上,同时在远端创建了主分支
+
+```
+git checkout -b dev
+在本地创建新分支bev
+```
+本地创建新分之后，新分支的指针是指向 `master` 分支的，也就是新分支的文件和主分支的文件是相同的（做了一次拷贝），一般是修改新分支下的文件后，做版本，然后 `git push -u origin dev` 在远程创建 *dev* 分支，同时把本地的内容推送到远端的 dev 分支之上，注意这需要切换到 dev 分支上操作，
+
+```
+git branch
+查看本地分支
+```
+
+```
+git checkout 分支名
+切换分支
+```
 ---
+
+### 如何删除分支
+
+- 如果有两个分支 `master` `dev` , 首先需要切换到 `master` 分支之上
+- `git branch -D dev` 这样本地 `dev` 分支就没有了, 但是 github 上的没有受到影响
+- `git push origin :dev` 这样可以把 github上的 `dev` 分支删除
+
+### 合并分支
+一般 `master` 分支上的代码是随时可以部署的项目，有时候我们需要添加新功能，这需要创建新的分支去测试，如果没问题了，则合并到主分支之上
+
+- 首先切换到主分支之上
+
+- `git merge dev` 把 `dev` 分支上的内容合并到 `master` 分支之上
+
+- 如果需要删除这个分支，则进行上面的删除分支操作。
+
 
 ### 学习git资源
 
