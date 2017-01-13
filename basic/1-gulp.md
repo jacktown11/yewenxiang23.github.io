@@ -5,23 +5,27 @@ title: gulp自动化工具的安装和使用
 ### gulp的安装
 
 第一步安装gulp自动化工具
+
 ```bash
 npm i -g gulp
 ```
 
 第二步初始化项目仓库
+
 ```bash
 npm init
 在项目文件夹中输入，生成一个package.json
 ```
 
 第三步在项目的文件中安装一个gulp
+
 ```bash
 npm i --save-dev gulp
 等价于  npm i -D gulp
 ```
 
 第四步安装gulp-sass编译插件
+
 ```bash
 npm i -D gulp-sass
 ```
@@ -89,15 +93,16 @@ gulp.task('default',['sass','copy-file'])
 
 ### 使用 imagemin 来压缩图片
 
-需要安装两个包，一个是 gulp-imagemin ，另一个是 imagemin-pngquant(专门用来压缩PNG图片的 两个包配合使用) 。
+需要安装两个包，一个是 gulp-imagemin ，另一个是 imagemin-pngquant(专门用来压缩PNG图片的 两个包配合使用)。
 
 ```bash
 cnpm i -D  gulp-imagemin imagemin-pngquant
 ```
 
-gulpfile.js 内容
+gulpfile.js 中的内容
+
 ```js
-...
+//code
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
@@ -110,8 +115,9 @@ gulp.task('imagemin', function(){
     }))
     .pipe(gulp.dest('dist/images'));
 });
-
-...
+//code
 ```
-在命令行中输入 `gulp imagemin` 就可以压缩图片了。它会把 `src/images` 文件夹下面的所有图片全部压缩，放在了 `dist/images` 文件夹中
+
+在命令行中输入 `gulp imagemin` 就可以压缩图片了。它会把 `src/images` 文件夹下面的所有图片全部压缩，放在了 `dist/images` 文件夹中。
+
 更多文档参考github上的教程 [imagemin](https://github.com/imagemin/imagemin)
