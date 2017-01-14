@@ -112,7 +112,7 @@ ppi= &radic;(1136<sup>2</sup>dp + 640<sup>2</sup>dp) / 4 = 326ppi (视网膜Reti
 
 Retina 屏（高清屏）:dpr都是大于等于2
 
-*整个换算流程以 iphone5 为例子*
+*整个换算流程以 iphone5 为例子 :*
 
 设备分辨率 _1136*640 dp_ ==>
 
