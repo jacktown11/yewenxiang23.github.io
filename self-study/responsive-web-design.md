@@ -74,6 +74,7 @@ viewport 就是浏览器窗口。这个设置翻译成大白话就是：浏览�
 
 ### 像素尺寸
 iphone5 对外宣传像素 640*1136像素 是物理像素，而我们实际开发中px是逻辑像素，两则之间的关系是不一样的。
+
 - px: css pixels 逻辑像素，浏览器使用的抽象单位。
   - 可以根据不同的设备来变大变小。
 - dp,pt: device independent pixels 设备无关像素
@@ -86,12 +87,13 @@ iphone5 对外宣传像素 640*1136像素 是物理像素，而我们实际开�
 
 ![px-devic-img](./reponsiveImg/px-devic.png)
 
-平面上：1px = (2)<sup>2</sup> * dp
+*平面上*:1px = (2)<sup>2</sup> * dp
+
   - 也就是1个css像素等于4个物理像素，如上图。
 
-维度上：1px = 2 * dp
+*纬度上*:1px = 2 * dp
 
-因此: 640dp*1136dp ==> 320px*568px
+*因此*: 640dp*1136dp ==> 320px*568px
 
 ### 为什么iphone5 的dpr为2？
 
@@ -99,7 +101,8 @@ iphone5 对外宣传像素 640*1136像素 是物理像素，而我们实际开�
 - PPI:屏幕每英寸的像素数量，即单位英寸内的像素密度
   - 目前，在计算机显示设备参数描述上，二者意思表达的是一样的。
 
-计算公式：以 iphone5 为例子
+*计算公式* :以 iphone5 为例子
+
 ppi= &radic;(1136<sup>2</sup>dp + 640<sup>2</sup>dp) / 4 = 326ppi (视网膜Retina屏)
 
 >PPI越高，像素越高，图像越清晰，但可视度越低，系统默认设置缩放比越大
@@ -110,8 +113,13 @@ ppi= &radic;(1136<sup>2</sup>dp + 640<sup>2</sup>dp) / 4 = 326ppi (视网膜Reti
 Retina 屏（高清屏）:dpr都是大于等于2
 
 *整个换算流程以 iphone5 为例子*
-设备分辨率 1136*640 dp ==>
-&radic;(1136<sup>2</sup>dp + 640<sup>2</sup>dp) / 4 = 326ppi ==>
-326 ppi属于 retina屏幕, dpr=2 ==>
-1px = dpr<sup>2</sup> * dp ==>
-iphone5 的屏幕为 320 * 568 px
+
+设备分辨率 _1136*640 dp_ ==>
+
+_&radic;(1136<sup>2</sup>dp + 640<sup>2</sup>dp) / 4 = 326ppi_ ==>
+
+326 ppi属于 retina屏幕, _dpr=2_ ==>
+
+_1px = dpr<sup>2</sup> * dp_ ==>
+
+_iphone5_ 的屏幕为 _320 * 568 px_
