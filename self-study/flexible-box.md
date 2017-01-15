@@ -40,6 +40,8 @@ title: flexbox弹性布局
 
 项目默认沿着主轴排列,单个子项目占据的主轴空间叫做 `main size` ,占据的交叉轴空间叫做 `cross size` 。
 
+---
+
 ### Flex 容器的六个属性
 
 > - flex-direction : row  row-reverse  column  column-reverse
@@ -103,6 +105,8 @@ title: flexbox弹性布局
 > - space-around : 每根轴线两侧的间隔都相等，所以，轴线之间的间隔比轴线与容器边框的间隔大一倍
 
 ![align-content images](./flexImg/align-content.png)
+
+---
 
 ### Flex 子项目的6个属性
 
