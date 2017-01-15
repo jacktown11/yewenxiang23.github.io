@@ -39,12 +39,12 @@ title: flexbox弹性布局
 
 ### Flex 容器的六个属性
 
-> - flex-direction : row | row-reverse | column | column-reverse
-> - flex-warp : nowrap | wrap | wrap-reverse
-> - flex-flow : <flex-direction> || <flex-wrap>
-> - justify-content : flex-start | flex-end | center | space-beteen | space-around
-> - align-items : flex-start | flex-end | center | baseline | stretch
-> - align-content : flex-start | flex-end | center | space-beteen | space-around | stretch
+> - flex-direction : row  row-reverse  column  column-reverse
+> - flex-warp : nowrap  wrap  wrap-reverse
+> - flex-flow : <flex-direction> 和 <flex-wrap>
+> - justify-content : flex-start  flex-end  center  space-beteen  space-around
+> - align-items : flex-start  flex-end  center  baseline  stretch
+> - align-content : flex-start  flex-end  center  space-beteen  space-around  stretch
 
 #### flex-direction 属性
 `flex-direction` 属性决定主轴的方向(即子项目的排列方向),它可能有4个值:
@@ -54,7 +54,7 @@ title: flexbox弹性布局
 > - column : 主轴为垂直方向，起点在顶部(top)。
 > - column-reverse : 主轴为垂直方向，起点在底部(bottom)。
 
-![felx direction images](./flexImg/flex-container.png)
+![felx direction images](./flexImg/flex-direction.png)
 
 #### flex-wrap 属性
 默认情况下，子项目都排在一条轴线上。 `flex-wrap` 属性定义了如果一条轴线排不下如何换行。
@@ -108,7 +108,7 @@ title: flexbox弹性布局
 > - flex-shrink : <number>(正整数)
 > - flex-basis : <length>(子项目固定长度或者auto)
 > - flex : 是 `flex-grow` `flex-shrink` `flex-basis` 的简写,默认值为 `0 1 auto` ,后两个属性可选
-> - align-self : auto | flex-start | flex-end | center | baseline |stretch
+> - align-self : auto  flex-start  flex-end  center  baseline stretch
 
 #### order 属性
 `order` 属性定义子项目的排列顺序。数值越小，排列越靠前，默认为0.
@@ -148,4 +148,4 @@ title: flexbox弹性布局
 
 ------
 
-[摘自阮一峰的个人博客](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
+[---摘自阮一峰的个人博客](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
