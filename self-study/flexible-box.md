@@ -3,6 +3,7 @@ title: flexbox弹性布局
 ---
 
 **任何一个都可以指定 Flex 布局**
+
 ```css
 .box{
   display: flex;
@@ -10,6 +11,7 @@ title: flexbox弹性布局
 ```
 
 **行内元素也可以使用 Flex 布局**
+
 ```css
 .box{
   display: inline-flex;
@@ -17,6 +19,7 @@ title: flexbox弹性布局
 ```
 
 **Webkit 内核的浏览器要加上 `-webkit` 前缀**
+
 ```css
 .box{
   display: -webkit-flex;
@@ -31,11 +34,11 @@ title: flexbox弹性布局
 采用 Flex 布局的元素(display:flex)，称为 Flex 容器（flex container），它的所有子元素自动成为容器成员，称为子项目。
 ![flex container img](./flexImg/flex-container.png)
 
-容器默认存在两根主轴: `水平的主轴(main axis)` 和 `垂直的交叉轴(cross axis)`.
+容器默认存在两根主轴: `水平的主轴(main axis)` 和 `垂直的交叉轴(cross axis)`。
 
-主轴的开始位置(与边框的交叉点)叫做 `main start` , 结束位置叫做 `main end` ;交叉轴的开始位置叫做 `cross start` , 结束位置叫做 `cross end` .
+主轴的开始位置(与边框的交叉点)叫做 `main start` , 结束位置叫做 `main end` ;交叉轴的开始位置叫做 `cross start` , 结束位置叫做 `cross end` 。
 
-项目默认沿着主轴排列,单个子项目占据的主轴空间叫做 `main size` ,占据的交叉轴空间叫做 `cross size` .
+项目默认沿着主轴排列,单个子项目占据的主轴空间叫做 `main size` ,占据的交叉轴空间叫做 `cross size` 。
 
 ### Flex 容器的六个属性
 
@@ -111,7 +114,7 @@ title: flexbox弹性布局
 > - align-self : auto  flex-start  flex-end  center  baseline stretch
 
 #### order 属性
-`order` 属性定义子项目的排列顺序。数值越小，排列越靠前，默认为0.
+`order` 属性定义子项目的排列顺序。数值越小，排列越靠前，默认为0。
 
 ![order images](./flexImg/order.png)
 
@@ -137,7 +140,7 @@ title: flexbox弹性布局
 #### flex 属性
 `flex` 属性是 `flex-grow` `flex-shrink` `flex-basis` 的简写，默认值为 `0 1 auto` ,后两个属性可选。
 
-该属性有两个快捷键：`auto` (`1 1 auto`) 和 `none` (`0 0 auto`).
+该属性有两个快捷键：`auto` (`1 1 auto`) 和 `none` (`0 0 auto`)。
 
 建议优先使用这个属性，而不是单独写三个分离属性，因为浏览器会推算相关值。
 
