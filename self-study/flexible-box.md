@@ -2,7 +2,7 @@
 title: flexbox弹性布局
 ---
 
-**任何一个都可以指定 Flex 布局**
+**任何一个容器都可以指定 Flex 布局**
 
 ```css
 .box{
@@ -44,7 +44,7 @@ title: flexbox弹性布局
 
 > - flex-direction : row  row-reverse  column  column-reverse
 > - flex-warp : nowrap  wrap  wrap-reverse
-> - flex-flow : <flex-direction> 和 <flex-wrap>
+> - flex-flow : `<flex-direction>` 和 `<flex-wrap>`
 > - justify-content : flex-start  flex-end  center  space-beteen  space-around
 > - align-items : flex-start  flex-end  center  baseline  stretch
 > - align-content : flex-start  flex-end  center  space-beteen  space-around  stretch
@@ -106,10 +106,10 @@ title: flexbox弹性布局
 
 ### Flex 子项目的6个属性
 
-> - order : <integer>(整数)
-> - flex-grow : <number>(正整数)
-> - flex-shrink : <number>(正整数)
-> - flex-basis : <length>(子项目固定长度或者auto)
+> - order : `<integer>` (整数)
+> - flex-grow : `<number>` (正整数)
+> - flex-shrink : `<number>`(正整数)
+> - flex-basis : `<length>` (子项目固定长度或者auto)
 > - flex : 是 `flex-grow` `flex-shrink` `flex-basis` 的简写,默认值为 `0 1 auto` ,后两个属性可选
 > - align-self : auto  flex-start  flex-end  center  baseline stretch
 
