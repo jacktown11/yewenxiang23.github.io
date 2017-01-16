@@ -10,7 +10,7 @@ title: 用flex做一个响应式的demo流程
 - 在 `source` 文件夹中初始化 `node.js` 项目，输入 `npm init` ，文件夹里面生成了一个 `package.json` 文件。
 - 在 `source` 文件夹中安装需要的包， `npm i -D gulp gulp-sass gulp-autoprefixer` 。
 - 装好之后，在 `source` 文件夹中创建 `.gitignore` 文件，输入 `node_modules` ，忽略 `node_modules` 文件夹,
-- 在 `source` 文件夹中创建 `gulpfile.js` 文件文件中输入一下内容
+- 在 `source` 文件夹中创建 `gulpfile.js` 文件文件中输入以下内容
 
   ```js
   var gulp = require('gulp');
@@ -130,7 +130,7 @@ title: 用flex做一个响应式的demo流程
     })
     //新加的函数，为了在build 前刷新页面
     gulp.task('watch',function(){
-    gulp.watch(['**/*.html'], ['rebuild']); //这一处改为build
+    gulp.watch(['**/*.html'], ['rebuild']); //这一处改为rebuild
     gulp.watch(['styles/*.scss'], ['sass']);
   });
   ```
