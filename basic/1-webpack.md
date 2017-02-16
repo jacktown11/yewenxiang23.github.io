@@ -41,7 +41,11 @@ module.exports = a;
 ```
 npm install webpack --save-dev
 ```
->由于webpack是一个工具 所以加上-dev参数
+
+> 由于webpack是一个工具 所以加上-dev参数。
+> npm install webpack 是一个错误的安装方式，安装的包不会记录在 dependencies或者 字段中,这样人无法知道你开发都使用了什么包。
+> npm install webpack --save 安装的包记录在了 package.json文件 dependencies字段中，一般是上线后需要包依赖这么装
+> npm install --save-dev 一般工具类的包安装方式，也就是只在开发需要用到的工具。
 >
 
 ### 装好之后如何使用 webpack命令呢？
