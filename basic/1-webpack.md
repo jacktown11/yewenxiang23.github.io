@@ -10,12 +10,12 @@ node.js的模块分为3类：
 
 - 自定义模块: 是自己写的JS代码模块文件。
 
-### 首先在初始化项目文件
+### 首先初始化项目文件
 ```
 npm init
 //在项目文件夹中生成一个package.json文件
 ```
-
+### 如何导入导出函数或者变量等
 现在建立三个文件，分别是 `index.html` `index.js` `text.js` 正常情况下一个JS文件是无法引用另外一个JS文件的，但是通过node.js环境 和webpack环境就能引用另外一个js文件。
 
 ```js
@@ -34,6 +34,25 @@ module.exports = a;
 
 在 `index.html` 中引入 `index.js` 执行在浏览器中会报错,因为正常情况下一个JS文件是无法引入另外一个JS文件的。在node.js环境中JS就可以引用另外一个JS文件，在命令行中输入 `node index.js` 输出 *“我是一个函数”*.这步操作与 webpack包无关,也就是不装webpack包也能输出 *“我是一个函数”* 。
 
+### 如何导出多个方法或者变量等等
+
+导入方法之前需要先导出方法，导出多个东西时需要全部放在一个对象里面:
+
+```js
+var a=1,b=2,c=3;
+module.exports = {
+  aa:a,
+  bb:b,
+  cc:c
+}
+```
+在别的JS文件中如何引入这些导出的东西
+
+```js
+var a = require("jsDir")
+console.log("a.aa") //输出1
+```
+
 ### 装webpack包
 
 `webpack` 是一个前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等。
@@ -42,13 +61,10 @@ module.exports = a;
 npm install webpack --save-dev
 ```
 
-> 由于webpack是一个工具 所以加上-dev参数。
-
-> npm install webpack 是一个错误的安装方式，安装的包不会记录在 dependencies字段中,这样人无法知道你开发都使用了什么包。
-
-> npm install webpack --save 安装的包记录在了 package.json文件 dependencies字段中，一般是上线后需要包依赖这么装
-
-> npm install --save-dev 一般工具类的包安装方式，也就是只在开发需要用到的工具。
+>> npm install webpack 是一个错误的安装方式，安装的包不会记录在 dependencies字段中,这样人无法知道你开发都使用了什么包。
+>>
+>> npm install webpack --save 安装的包记录在了 package.json文件 dependencies字段中，一般是上线后需要包依赖这么装
+>> npm install --save-dev 一般工具类的包安装方式，也就是只在开发需要用到的工具。
 >
 
 ### 装好之后如何使用 webpack命令呢？
@@ -80,6 +96,9 @@ npm run build
 
 首先package.json 文件中script字段做出如上改变
 ```
+> 可以在 "build":"./node_modules/.bin/webpack index.js yewenxiang.js -p" 加上 -p，可以把打包后的代码压缩， -p 是 product 的缩写
+>
+
 
 ```bash
 npm run build
