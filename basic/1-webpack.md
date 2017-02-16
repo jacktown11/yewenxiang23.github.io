@@ -10,6 +10,23 @@ node.js的模块分为3类：
 
 - 自定义模块: 是自己写的JS代码模块文件。
 
+```js
+// 通过 module.exports 导出模块，require 导入模块。
+
+// 导入核心模块
+var fs = require('fs')
+
+// 导入第三方模块
+var $ = require('jquery')
+
+// 导入自定义的模块
+var test = require('./test')
+
+// 导出模块
+module.exports.test = 'test';
+```
+
+
 ### 首先初始化项目文件
 
 ```
@@ -149,21 +166,3 @@ package.json script字段如上改变
 
 > webpack.config.js这个文件名，默认情况下需要按照这个命名，不然会报错，但是有时候我们需要两个配置文件，一个是开发过程中的配置文件，一个是开发结束后需要用的配置文件，此时在webpack运行时候通过 --conf 这个参数指定配置文件，比如:webpack --config conf.js
 >
-
-### 杂记
-
-```js
-// 通过 module.exports 导出模块，require 导入模块。
-
-// 导入核心模块
-var fs = require('fs')
-
-// 导入第三方模块
-var $ = require('jquery')
-
-// 导入自定义的模块
-var test = require('./test')
-
-// 导出模块
-module.exports.test = 'test';
-```
