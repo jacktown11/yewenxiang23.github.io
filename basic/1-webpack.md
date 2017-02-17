@@ -68,7 +68,7 @@ module.exports = {
 在别的JS文件中如何引入这些导出的东西
 
 ```js
-var a = require("jsDir")
+var a = require("./jsDir")
 console.log("a.aa") //输出1
 ```
 
