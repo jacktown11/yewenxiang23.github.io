@@ -5,14 +5,14 @@ title: React基础
 ### React环境搭建完毕后
 在主入口文件 `index.js` 文件中引入 `react` 模块。
 
-```js
+```
 import React from "react";
 import ReactDOM from "react-dom";
 ```
 
 ### React的基本语法
 
-```js
+```
 let age = 24;
 let sex = 1;
 let obj = {name:"hahaha"};
@@ -36,13 +36,13 @@ ReactDOM.render(
 - 必须由一个标签来包裹，不然会报错。
 - jsx标签语句里面注释 `{/* something */}`。
 - 我们可以在jsx元素内嵌入变量，方法，对象，等 {a}。
-- class 写为 className , tabindex 为 tabIndex for 写为htmlFor。
+- class 写为 className，tabindex 为 tabIndex，for 写为htmlFor。
 - JSX 语法会被编译，通过 `ReactDOM.createElement()` 这个方法。
 
 ### 组件component的3种方式
 注意函数的首字母要大写，不然会报错。
 
-```js
+```
 //第一种方法 ES5的写法，现在基本没人用了
 var Greeting = React.createClass({
     render: function(){
