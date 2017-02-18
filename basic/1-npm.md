@@ -80,3 +80,6 @@ npm adduser
 npm help
 npm cache clear  //可以清空npm本地的缓存
 ```
+
+### 后续学习资源
+- [阮一峰的教程](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)

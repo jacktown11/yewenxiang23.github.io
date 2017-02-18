@@ -11,6 +11,7 @@ npm init -y
 // 参数 -y 是yes的意思，不用一路回车
 ```
 生成了一个 `package.json`，来记录包和其他的一些信息。
+
 **例如：**
 
 ```json
@@ -89,4 +90,4 @@ module.exports = {
 自此搭建一个React学习的开发环境基本结束，后面再做React项目中去进一步的学习 `webpack` 的各种配置
 
 **一些学习的资源:**
-- [逼哥的webpack程](https://github.com/chenbin92/react-redux-webpack-starter/issues/1)
+- [逼哥的webpack教程](https://github.com/chenbin92/react-redux-webpack-starter/issues/1)
