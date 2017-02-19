@@ -33,7 +33,8 @@ ReactDOM.render(
 ```
 - JSX语法，允许我们直接在JS里面去写标签。
 - 每个标签必须关闭。
-- 必须由一个标签来包裹，不然会报错。
+- 必须由一个标签来包裹，不然会报错
+    - Module build failed: SyntaxError: Adjacent JSX elements must be wrapped in an enclosing tag (7:6)。
 - jsx标签语句里面注释 `{/* something */}`。
 - 我们可以在jsx元素内嵌入变量，方法，对象，等 {a}。
 - class 写为 className，tabindex 为 tabIndex，for 写为htmlFor。
@@ -49,11 +50,21 @@ var Greeting = React.createClass({
       return <h1>ye</h1>;
     }
 })
-//第二种方法
+//第二种方法常用在DOM结构的组合
 function Greeting(){
   return <h1>hello</h1>;
 }
 
+//第三种
+class Greeting extends React.Component {
+  render(){
+    return (
+      <div>
+        <h1>hello</h1>
+      </div>
+    )
+  }
+}
 
 ReactDOM.render(
   <Greeting />,document.getElementById("app")
