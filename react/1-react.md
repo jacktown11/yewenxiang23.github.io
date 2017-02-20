@@ -1,5 +1,5 @@
 ---
-title: React基础
+title: jsx语法基础(组件创建的方式，导入图片和css文件，css样式写法)
 ---
 
 ### React环境搭建完毕后

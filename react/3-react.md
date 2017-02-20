@@ -1,5 +1,5 @@
 ---
-title: React-杂记
+title: bind super()理解
 ---
 
 ### bind
