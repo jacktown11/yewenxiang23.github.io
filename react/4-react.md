@@ -127,3 +127,75 @@ export default App;
 ```
 - 组件属性的数组最好交给 `state` 属性来统一管理。
 - `{...item}` 这种写法更加的简便，`arr` 数组中每个对象都被当做了参数来传递，使用 `.map()` 方法，把属性插入了 `<Card />` 这个组件中。Spread 扩展操作符: `{...item}` ,直接把对象铺开放在了 `<Card />` 组件中。
+
+### 子组件设置属性验证
+
+通过 `Btn.propTypes = {}` 来设置属性的格式，当父组件传的值不符时，浏览器会报错。
+
+```
+//Btn.js
+Btn.propTypes = {
+  title:React.PropTypes.string,
+  bg:React.PropTypes.string,
+  padd:React.PropTypes.string
+}
+```
+
+### 子组件传递函数和参数
+
+```
+//父组件 App.js
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      num:0
+    }
+  }
+  addNum(num2){
+    this.setState({num:this.state.num + num2});
+  }
+  render(){
+    return (
+      <div>
+        数值是：{this.state.num} <br />
+        <Btn title="减1" bg="#666" padd='20px 30px' addNum = {this.addNum.bind(this,-1)}/>
+        <Btn title="加1" bg="pink" padd='20px 30px' addNum = {this.addNum.bind(this,1)}/>
+      </div>
+    )
+  }
+}
+```
+
+```
+//子组件 Btn.js
+class Btn extends React.Component{
+  // handleClick(){
+  //   this.props.addNum();
+  // }
+  render(){
+    let styles = {
+      padding:this.props.padd,
+      fontSize:"18px",
+      backgroundColor:this.props.bg
+    }
+    console.log(this.props);
+    return (
+      // <button style={styles} onClick = {this.handleClick.bind(this)}>{this.props.title}</button>
+      // 或者
+      <button style={styles} onClick = {() => this.props.addNum()}>{this.props.title}</button>
+    )
+  }
+}
+```
+
+##### 子组件设置函数的验证
+
+```
+//Btn.js
+Btn.propTypes = {
+  addNum:React.PropTypes.func.isRequired
+  //必须传一个函数，否则报错。
+}
+
+```
