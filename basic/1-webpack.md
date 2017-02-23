@@ -131,7 +131,7 @@ npm run build
 ```
 就会在项目文件夹中生成一个 `yewenxiang.js` 文件，这个文件是 `index.js` 和 `test.js` 文件的合体。webpack包把这两个文件打包在一起，而且相同的全局变量不会导致冲突。就可以在 `index.html` 文件中引入 `yewenxiang.js` 这个文件了，浏览器就不会报错了。
 
-### 常用的webpack和webpack-dev-server的基本命令
+### 常用的webpack的基本命令
 
 假设使用全局安装的方式
 
