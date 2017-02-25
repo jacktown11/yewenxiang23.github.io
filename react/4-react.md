@@ -199,3 +199,73 @@ Btn.propTypes = {
 }
 
 ```
+
+### 如何在组件中嵌套组件(this.props.children)
+
+`this.props.children` 表示组件所有的子节点，也就是在父组件中标签
+
+```
+//Children.js
+import React from 'react';
+import ReactDOM from "react-dom";
+import Son from "./Son";
+import Test from "./Test";
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                aaa
+                <Son>
+                  bbb
+                    <Test></Test>
+                    <Test></Test>
+                    <Test></Test>
+                    <Test></Test>
+                    <Test></Test>
+                </Son>
+            </div>
+        )
+    }
+}
+export default App;
+```
+
+```
+//Son.js
+import React from 'react';
+import ReactDOM from "react-dom";
+class Son extends React.Component{
+  componentDidMount(){
+
+  }
+  render(){
+    console.log(this.props.children); //打印出 ["bbb", Object, Object, Object, Object, Object]
+    return(
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+}
+export default Son;
+```
+
+```
+//Test.js
+import React from 'react';
+import ReactDOM from "react-dom";
+class Test extends React.Component{
+  render(){
+    console.log(this.props.children); //输出5个 undefined
+    return(
+      <div>
+        我是Test组件
+      </div>
+    )
+  }
+}
+
+export default Test;
+
+```
