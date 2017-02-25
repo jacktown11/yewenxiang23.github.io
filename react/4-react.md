@@ -202,7 +202,12 @@ Btn.propTypes = {
 
 ### 如何在组件中嵌套组件(this.props.children)
 
-`this.props.children` 表示组件所有的子节点，也就是在父组件中标签
+`this.props.children` 表示组件所有的子节点，也就是在父组件中包含的标签。
+它有三种可能的值：
+
+- 如果当前组件没有子节点，它就是 `undefined`
+- 如果有一个子节点，数据类型是 `object`
+- 如果有多个子节点，数据类型是 `array`
 
 ```
 //Children.js
@@ -268,4 +273,18 @@ class Test extends React.Component{
 
 export default Test;
 
+```
+
+React 提供一个工具方法 `React.Children` 来处理 `this.props.children` 。我们可以用 `React.Children.map` 来遍历子节点，而不用担心 `this.props.children` 的数据类型是 `undefined` 还是 `object`
+
+```
+return (
+      <ol>
+      {
+        React.Children.map(this.props.children, function (child) {
+          return <li>{child}</li>;
+        })
+      }
+      </ol>
+    );
 ```
