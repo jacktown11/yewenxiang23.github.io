@@ -53,10 +53,10 @@ class From extends React.Component{
 }
 ```
 
-React 将用户输入的值更新到 <input> 组件的 value 属性,这样页面会重新被渲染显示出输入的值。
+React 将用户输入的值更新到 `<input>` 组件的 value 属性,这样页面会重新被渲染显示出输入的值。
 
 ### 非受控组件
-没有设置 value(或者设为 null) 的 <input> 组件是一个不受限组件，对于不受限的 <input> 组件，渲染出来的元素直接反应用户输入
+没有设置 value(或者设为 null) 的 `<input>` 组件是一个不受限组件，对于不受限的 `<input>` 组件，渲染出来的元素直接反应用户输入
 
 ```
 render: function() {
@@ -131,14 +131,14 @@ class Form extends React.Component {
   <textarea name="description">This is the description.</textarea>
 ```
 
-对 HTML 而言，让开发者设置多行的值很容易。但是，React 是 JavaScript，没有字符限制，可以使用 \n 实现换行。简言之，React 已经有 value、defaultValue 属性，</textarea> 组件的子节点扮演什么角色就有点模棱两可了。基于此， 设置 <textarea> 值时不应该使用子节点：
+对 HTML 而言，让开发者设置多行的值很容易。但是，React 是 JavaScript，没有字符限制，可以使用 \n 实现换行。简言之，React 已经有 value、defaultValue 属性，</textarea> 组件的子节点扮演什么角色就有点模棱两可了。基于此， 设置 `<textarea>` 值时不应该使用子节点：
 
 ```
 <textarea name="description" value="This is a description." />
 ```
 
 ### 为什么 `<select>` 使用 `value` 属性
-HTML 中 <select> 通常使用 <option> 的 selected 属性设置选中状态；React 为了更方面的控制组件，采用以下方式代替：
+HTML 中 `<select>` 通常使用 `<option>` 的 selected 属性设置选中状态；React 为了更方面的控制组件，采用以下方式代替：
 
 ```
 <select onChange={(e)=>{
