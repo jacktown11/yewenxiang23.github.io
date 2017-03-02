@@ -333,7 +333,7 @@ browserHistory.push('/some/path');
 ```
 <Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link>
 ```
-实际上，`IndexLink`就是对`Link`组件的o`nlyActiveOnIndex`属性的包装。
+实际上，`IndexLink`就是对`Link`组件的`onlyActiveOnIndex`属性的包装。
 
 ### histroy 属性
 `Router`组件的`history`属性，用来监听浏览器地址栏的变化，并将URL解析成一个地址对象，供 React Router 匹配。
@@ -461,4 +461,5 @@ const Home = withRouter(
 
 
 --[整理自阮一峰的博客](http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu)
+
 --[官方demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
