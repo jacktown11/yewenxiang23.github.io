@@ -43,7 +43,7 @@ mongod --dbpath=./data/db
 
 既然 MongoDB 已经启动了，那如何操作它呢？通过 MongoDB 提供的 mongo shell 工具，可以很方便的和 MongoDB 数据库进行通信，也可以使用图形化的界面。
 
-###### 使用 mongo shell 工具操作数据库
+### 使用 mongo shell 工具操作数据库
 
 首先要确保在MongoDB 数据库运行的状态下，才能启动 mongo shell，在命令行中输入:
 
