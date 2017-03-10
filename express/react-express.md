@@ -3,7 +3,7 @@ title: react-express 实现前后台通信
 ---
 
 ### Express简介
-Express 的 [官网位置](http://www.expressjs.com.cn/) 。官网上，首页最能吸引 我们注意的就是 API 这个关键字。API （ Application Program Interface ）是应用开发接口，简称 **接口** 。而 Express 就是用来 **制作后台接口** 的，或者说叫制作后台 API 的。
+Express 的 [官网位置](http://www.expressjs.com.cn/) 。官网上，首页最能吸引我们注意的就是 API 这个关键字。API （ Application Program Interface ）是应用开发接口，简称 **接口** 。而 Express 就是用来 **制作后台接口** 的，或者说叫制作后台 API 的。
 
 ### 如何制作一个Express后台
 
