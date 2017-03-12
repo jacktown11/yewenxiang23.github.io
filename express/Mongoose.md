@@ -1,5 +1,5 @@
 ---
-title: 如何在 JS 代码中来操作 mongodb (mongoose)
+title: mongoose 笔记 (如何在 JS 代码中来操作 mongodb)
 ---
 
 Mongoose 是一个 JS 库，作用是把 MongoDB 的数据，封装成 JS 对象。便于 我们用 JS 代码来操作 Mongodb 。
@@ -111,3 +111,11 @@ app.get("/users",function(req,res){
 ```bash
 $ curl -X GET http://localhost:3000/users
 ```
+
+### 名词解释
+
+- Schema  ：  一种以文件形式存储的数据库模型骨架，不具备数据库的操作能力
+- Model   ：  由Schema发布生成的模型，具有抽象属性和行为的数据库操作对
+- Entity  ：  由Model创建的实体，他的操作也会影响数据库
+
+Schema、Model、Entity的关系请牢记，Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性。
