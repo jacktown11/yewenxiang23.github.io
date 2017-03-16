@@ -15,7 +15,7 @@ Query String Parameters
 name: happypeter
 ```
 
-##### 传递多个参数
+#### 传递多个参数
 
 - 可以传递多组参数的，每组之间以 `&` 隔开
 
@@ -65,7 +65,7 @@ Content-Type: application/x-www-form-urlencoded;charset=utf-8
 
 ```html
 <!-- index.html -->
-<form action="/login" method="post" >
+<form action="http://localhost/login" method="post" >
     <label>username:</label>
     <input type="text" name="username">
     <input type="submit">
@@ -88,3 +88,77 @@ app.post('/login', urlencodedParser, function (req, res) {
   res.send('welcome, ' + req.body.username)
 })
 ```
+
+#### 使用curl来模拟上面的表单提交
+
+```bash
+$ curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d 'username=peter' localhost:3005/login -v
+```
+上面的 `-H "Content-Type: application/x-www-form-urlencoded"` 可以省略，省略后发出的请求不会变。
+
+上面的输出中看不到请求主体，可以用下面的命令看到：
+
+```bash
+$  curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d 'username=peter' localhost:3005/login -v --trace-ascii /dev/stdout
+```
+
+### 使用axios来发POST请求
+
+##### 文本类型
+
+```
+Content-Type:application/json
+```
+
+后台修改
+```js
+--- app.use(bodyParser.urlencoded());
++++ app.use(bodyParser.json());
+```
+
+json接口，可以在[body-parser](https://github.com/expressjs/body-parser) 查
+
+#### 使用curl调试API
+
+```
+curl -H "Content-Type: application/json" -X POST -d '{"username":"happypeter"}' http://localhost:3000/login
+```
+
+- `-H` 设置头部
+- `-X` 设置请求方法
+- `-d` 设置数据，具体的值就是后面的 json 字符串。
+
+#### 前台发送请求
+
+```js
+class App extends React.Component {
+    handleClick(e) {
+      e.preventDefault();
+      let value = this.refs.username.value;
+      axios.post("http://tiger.haoduoshipin.com/login",{username:value})
+      .then(res=>console.log(res.data.msg));
+    }
+    render() {
+        return (
+          <div>
+             <form onSubmit={this.handleClick.bind(this)}>
+               <input type="text" ref="username"/>
+               <input type="submit" />
+             </form>
+          </div>
+        )
+    }
+}
+```
+
+### 四种传参方法的比较
+
+- 用查询字符串进行参数传递，简称”查询字符串“
+- 数据嵌入到链接中，通过 GET 传，简称“链接传参”
+- 数据写入 form 中，通过 POST 请求，简称”form 传参“
+- 通过 axios ，通过 POST 请求传，简称”axios 传参“
+
+**各自试用的场景:**
+- 查询字符串和链接传参，适合一些简短信息，例如 GET /users?id=12345 或者 GET /users/12345 ，传递 user id
+- form 传参数，可以少用，因为 axios 传 json 这种形式更为灵活简单
+- axios 传参，最灵活，传递 JSON 数据，形式也美观，可以作为主力传参数的方式使用
