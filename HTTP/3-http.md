@@ -73,5 +73,8 @@ app.post('/login', function(req, res){
 
 ```bash
 $ curl -v -X POST -H "Content-Type: application/json" -d '{"username": "peter"}' http://tiger.haoduoshipin.com/login
-
 ```
+
+### 单页面应用中 Cookie 使用不方便了
+
+涉及到跨域问题，在 React-Axios 环境下，收发 cookie 默认都是不允许的，所以 req.session 的使用意义不大了。
