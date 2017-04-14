@@ -6,7 +6,7 @@ title: React组件生命周期
 一个 React 组件的各个生命阶段会自动触发一些函数，这些被称为生命周期函数。
 具体如下图：
 
-![](./4-react-img/react-lifecycle.jpeg)
+![](./4-react-img/react-lifecycle.png)
 
 ##### 初始化:
 
