@@ -148,7 +148,7 @@ function Person(){
 //4.返回一个临时对象
 ```
 
-> prototype对象的方式this指向实例对象，因为实例对象的__proto__已经指向了构造函数的prototype,方法会沿着原型链进行查找
+> prototype对象的方法中的this指向实例对象，因为实例对象的__proto__已经指向了构造函数的prototype,方法会沿着原型链进行查找
 >
 
 ### 箭头函数
