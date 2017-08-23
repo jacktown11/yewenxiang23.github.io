@@ -13,11 +13,11 @@ title: react-native 如何添加自定义图标
 - 首先建立一个 `font` 文件夹,里面放入 `iconfont.ttf`
 - 打开 `toydb.xcodeproj` 文件
 
-![alt text][./img/font.jpg]
+![alt text](./img/font.jpg)
 
-![alt text][./img/font2.png]
+![alt text](./img/font2.png)
 
-![alt text][./img/font3.jpg]
+![alt text](./img/font3.jpg)
 
 ### android 配置
 
