@@ -145,8 +145,11 @@ function inheritObject(o){
 }
 function inheritPrototype(subClass, superClass){
   var p = inheritObject(superClass.prototype)
+  //复制一份父类的原型副本保存在变量中
   p.constructor = subClass
+  //修正因为重写子类原型导致子类的constructor属性被修改
   subClass.prototype = p
+  //设置子类的原型
 }
 
 function SuperClass(name){
@@ -177,3 +180,60 @@ instance2.getName()            //js book
 
 >需要注意的是:子类想添加原型和方法必须通过 .prototype 来添加，直接赋予对象会覆盖掉从父类原型继承的对象了
 >
+
+### 多继承
+
+- 单继承
+
+```js
+var extend = function(target, source) {
+  for (var property in source){
+    target[property] = source[property]
+  }
+  return target
+}
+```
+解释：就是对对象中的属性的一个复制过程，extends方法只是一个浅复制，只能复制值类型的属性，对于引用类型的无能为力，复制成功后，在新对象中修改了引用对象的值，原来的值也会改变。
+
+- 多继承
+  - 实际上是在单继承的基础上多传入几个对象，做一些改变就实现了
+
+```js
+var mix = function(){
+  var i = 1,            //从第二个参数起为被继承的对象，第一个参数为需要继承的对象
+      len = arguments.length,  //获取所有被继承的对象数组
+      target = arguments[0],
+      arg;
+    //遍历被继承的对象数组
+  for(;i < len; i++){
+    arg = arguments[i];      //缓存当前对象
+    for (var property in arg){
+      target[property] = arg[property];
+    }
+  }
+  return target
+}
+```
+
+也可以绑定到原生对象Object上,这样所有的对象都拥有这个方法了
+
+```js
+Object.prototype.mix = function(){
+  var i = 0,              //从第一个参数起为被继承对象
+      len = arguments.length,
+      arg,
+      for(;i < len; i++){
+        arg = arguments[i]
+        for(var property in arg){
+          this[property] = arg[property]
+        }
+      }
+}
+```
+
+调用
+
+```
+otherBook.mix(book1,book2)
+```
+
