@@ -133,6 +133,11 @@ git checkout 分支名
 - `git branch -D dev` 这样本地 `dev` 分支就没有了, 但是 github 上的没有受到影响
 - `git push origin :dev` 这样可以把 github上的 `dev` 分支删除
 
+### 获取远端新分支
+
+- `git branch -a` 列出远端所有分支
+- `git checkout -b dev origin/dev` 作用是checkout远程的dev分支，在本地起名为dev分支，并切换到本地的dev分支
+
 ### 合并分支
 一般 `master` 分支上的代码是随时可以部署的项目，有时候我们需要添加新功能，这需要创建新的分支去测试，如果没问题了，则合并到主分支之上
 
